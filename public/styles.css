@@ -1,5 +1,5 @@
 body {
-    background-color: #ffeaa7;
+    background-color: #A4A1EF;
     min-height: 70vh;
     padding: 1rem;
     box-sizing: border-box;
@@ -19,7 +19,7 @@ body {
     max-width: 500px;
     min-width: 250px;
     background: #f1f5f8;
-    background-image: radial-gradient(#bfc0c1 7.2%, transparent 0);
+    background-image: radial-gradient(#A4A1EF 7.2%, transparent 0);
     background-size: 25px 25px;
     border-radius: 20px;
     box-shadow: 4px 3px 7px 2px #00000040;
@@ -33,10 +33,11 @@ body {
     margin-bottom: 1rem;
   }
   .heading h1 {
+    color: white;
     transform: rotate(2deg);
     padding: 0.2rem 1.2rem;
     border-radius: 20% 5% 20% 5%/5% 20% 25% 20%;
-    background-color: #fdcb6e;
+    background-color: #6E6EB7;
     font-size: 1.5rem;
   }
   
@@ -47,7 +48,7 @@ body {
     border-bottom-right-radius: 15px 3px;
     border-bottom-left-radius: 3px 15px;
     border: solid 3px transparent;
-    border-bottom: dashed 3px #fdcb6e;
+    border-bottom: dashed 3px #FF9DC2;
     font-family: "Architects Daughter", cursive;
     font-size: 1rem;
     color: hsla(260, 2%, 25%, 0.7);
@@ -62,7 +63,7 @@ body {
     text-decoration: none;
     padding-bottom: 3px;
     border-radius: 5px;
-    background-color: #ffeaa7;
+    background-color: #A4A1EF;
   }
   button span {
     background: #f1f5f8;
