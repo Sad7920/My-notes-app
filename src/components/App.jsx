@@ -1,52 +1,46 @@
 import React, { useState } from "react";
-import ToDoList from "./ToDoList";
-import InputArea from "./InputArea";
+import Header from "./Header";
+import Footer from "./Footer";
+import Note from "./Note";
+import CreateArea from "./CreateArea";
 
 function App() {
 
-    
-    const [items, setItems] = useState([])
+  const [notes, setNotes] = useState([])
 
-    
+  function addNote(newNote) {
+    setNotes(prevValue => {
+      return [...prevValue, newNote]
+    })
+  }
 
-    function handleChange1(inputText) {
-        setItems(prevValue => {
-            return [...prevValue, inputText];
-        })
-    }
+  function deleteNote(id){
+    setNotes(prevNotes => {
+      return prevNotes.filter((allNotes, index) => {
+        return index !== id
+      })
+    })
+  }
 
-    function deleteItem(id){
-        setItems((prevValue) => {
-            return prevValue.filter(
-                (item, index) => {
-                    return index !== id;
-                }
-            )
-        })
-    }
 
-    return (
-        <div className="container">
-            <div className="heading">
-                <h1>To-Do List</h1>
-            </div>
-            <InputArea 
-            addItem={handleChange1}
-            />
-            <div>
-                <ul>
-                    {items.map((item, index) => (
-                        <ToDoList 
-                        key={index}
-                        id={index}
-                        text={item}
-                        onChecked={deleteItem}
-                        />
-                    ))}
-                </ul>
-            </div>
-        </div>
-    );
+  return (
+    <div>
+      <Header />
+      <CreateArea
+        onAdd={addNote}
+      />
+      {notes.map((noteItem, index) => {
+        return <Note
+        key={index}
+        id={index}
+        title={noteItem.title}
+        content={noteItem.content}
+        onDelete={deleteNote}
+      />
+      })}
+      <Footer />
+    </div>
+  );
 }
 
 export default App;
